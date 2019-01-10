@@ -17,7 +17,7 @@ char* nextWord(FILE* file)
     int maxLength = 16;
     int length = 0;
     char* word = malloc(sizeof(char) * maxLength);
-//Fix me: Do the necessary change to make the implementation //case-insensitive  
+ 
    while (1) 
     {
         char c = fgetc(file);
@@ -59,7 +59,6 @@ char* nextWord(FILE* file)
  */
 int main(int argc, const char** argv)
 {
-    // FIXME: implement
     const char* fileName = "input1.txt";
     if (argc > 1)
     {
@@ -71,8 +70,7 @@ int main(int argc, const char** argv)
     
     HashMap* map = hashMapNew(10);
     
-    // --- Concordance code begins here ---
-    // Be sure to free the word after you are done with it here.
+ 
 	FILE *file = fopen(fileName, "r");
 	char* current = nextWord(file);
 
@@ -90,7 +88,7 @@ int main(int argc, const char** argv)
 		current = nextWord(file);
 	}
 	
-    // --- Concordance code ends here ---
+ 
     
     hashMapPrint(map);
 	fclose(file);
