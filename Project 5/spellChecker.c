@@ -54,7 +54,7 @@ char* nextWord(FILE* file)
  */
 void loadDictionary(FILE* file, HashMap* map)
 {
-    // FIXME: 
+     
 	char* current = nextWord(file);
 
 	while (current!=NULL)
@@ -76,7 +76,7 @@ void loadDictionary(FILE* file, HashMap* map)
  */
 int main(int argc, const char** argv)
 {
-    // FIXME: implement
+    
     HashMap* map = hashMapNew(1000);
     
     FILE* file = fopen("dictionary.txt", "r");
