@@ -83,7 +83,7 @@ void hashMapInit(HashMap* map, int capacity)
  */
 void hashMapCleanUp(HashMap* map)
 {
-    // FIXME: implement
+    
 	HashLink *current = malloc(sizeof(struct HashLink*));
 	HashLink *temp = malloc(sizeof(struct HashLink*));
 	
@@ -146,7 +146,7 @@ void hashMapDelete(HashMap* map)
  */
 int* hashMapGet(HashMap* map, const char* key)
 {
-    // FIXME: implement
+    
 	assert(map != 0);
 
 	HashLink* current = malloc(sizeof(HashLink*));
@@ -173,8 +173,6 @@ int* hashMapGet(HashMap* map, const char* key)
  * capacity. After allocating the new table, all of the links need to be
  * rehashed into it because the capacity has changed.
  * 
- * Remember to free the old table and any old links if you use hashMapPut to
- * rehash them.
  * 
  * @param map
  * @param capacity The new number of buckets.
@@ -261,7 +259,7 @@ void hashMapPut(HashMap* map, const char* key, int value)
  */
 void hashMapRemove(HashMap* map, const char* key)
 {
-	// FIXME: implement
+
 	int idx = HASH_FUNCTION(key) % map->capacity;
 
 	HashLink *current = malloc(sizeof(HashLink*));
@@ -305,7 +303,7 @@ void hashMapRemove(HashMap* map, const char* key)
  */
 int hashMapContainsKey(HashMap* map, const char* key)
 {
-    // FIXME: implement
+
 	int idx = HASH_FUNCTION(key) % map->capacity;
 
 	HashLink* current = map->table[idx];
@@ -328,7 +326,7 @@ int hashMapContainsKey(HashMap* map, const char* key)
  */
 int hashMapSize(HashMap* map)
 {
-    // FIXME: implement
+  
     return map->size;
 }
 
@@ -339,7 +337,6 @@ int hashMapSize(HashMap* map)
  */
 int hashMapCapacity(HashMap* map)
 {
-    // FIXME: implement
 	return map->capacity;
     return 0;
 }
@@ -351,7 +348,7 @@ int hashMapCapacity(HashMap* map)
  */
 int hashMapEmptyBuckets(HashMap* map)
 {
-    // FIXME: implement
+ 
 	int total = 0;
 	for (int i = 0; i < map->capacity; i++)
 	{
@@ -373,8 +370,7 @@ int hashMapEmptyBuckets(HashMap* map)
  */
 float hashMapTableLoad(HashMap* map)
 {
-    // FIXME: implement
-	int load = ((float)map->size) / (float)map->capacity;
+    int load = ((float)map->size) / (float)map->capacity;
     return load;
 }
 
